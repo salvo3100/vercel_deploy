@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 
 //FUNZIONI INTERNE, NON COLLEGATE A NESSUN ENDPOINT API
 const leggiBookDalFile =  () => {
-  return fs.readFile('database/books.json',"utf8")
+  return fs.readFile('database_json/books.json',"utf8")
     .then((resp)=>{
       const data = JSON.parse(resp)
       return data; 
@@ -14,7 +14,7 @@ const leggiBookDalFile =  () => {
 };
 const scriviBookSulFile = async (data) => {
   try {
-    await fs.writeFile('database/books'+'.json', JSON.stringify(data, null, 2), "utf8");
+    await fs.writeFile('database_json/books'+'.json', JSON.stringify(data, null, 2), "utf8");
     return true;
   } catch (error) {
     console.error('Errore scrittura su file!!!!!!!!!!!', error)
