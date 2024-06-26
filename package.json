@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-   "start": "node app.js"
+   "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "vercel-build": "echo HELLO!"
   },
   "dependencies": {
     "axios": "^1.7.2",
